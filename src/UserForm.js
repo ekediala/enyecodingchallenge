@@ -1,5 +1,12 @@
 // jshint ignore:start
-import { Form, Input, Button, DatePicker, InputNumber } from 'antd';
+import {
+  Form,
+  Input,
+  Button,
+  DatePicker,
+  InputNumber,
+  notification,
+} from 'antd';
 import React, { Component } from 'react';
 
 class UserForm extends Component {
@@ -70,20 +77,23 @@ class UserForm extends Component {
 
   submitForm = event => {
     event.preventDefault();
-    try {
-      this.props.form.validateFields((err, values) => {
-        if (!err) {
-          this.sendUserData(values);
-          console.log('Submitted', values);
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        this.sendUserData(values);
+      }
+    });
   };
 
   sendUserData = values => {
-    // TODO
+    this.showNotification('success');
+    console.log('Submitted', values);
+  };
+
+  showNotification = type => {
+    notification[type]({
+      message: 'Sent',
+      description: 'Data sent to server. Thank you.',
+    });
   };
 }
 

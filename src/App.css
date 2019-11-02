@@ -1,28 +1,20 @@
 @import '~antd/dist/antd.css';
 .app {
-  margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form {
+  flex-basis: 18rem;
 }
 
 .app-body {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 0 1rem;
-}
-
-.table {
-  flex-grow: 1;
-  padding: 1rem;
-}
-
-.form {
-  flex-grow: 1;
-  padding: 1rem;
 }
 
 .match-form-size {

@@ -1,7 +1,12 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { tableReducer } from '../reducers';
+import createSagaMiddleware from 'redux-saga';
+import root from '../../saga';
 
-const initialTableState = {
+const sagaMiddleware = createSagaMiddleware();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+let initialTableState = {
   users: [],
   columns: [
     {
@@ -37,7 +42,9 @@ const initialTableState = {
 const store = createStore(
   tableReducer,
   initialTableState /* preloadedState, */,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(sagaMiddleware))
 );
+
+sagaMiddleware.run(root);
 
 export default store;

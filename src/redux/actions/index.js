@@ -1,6 +1,6 @@
-export default function actionCreator(type, userData = {}) {
+export default function actionCreator(type, payload = {}) {
   return {
     type,
-    userData,
+    payload,
   };
 }

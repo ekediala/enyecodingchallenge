@@ -8,9 +8,9 @@ function App() {
   const columns = useSelector(state => state.columns);
   const users = useSelector(state => state.users);
   return (
-    <article className="app">
+    <div className="app">
       <header>
-        <h1 className="app-header">Coding Challenge 1</h1>
+        <h1 className="app-header">Coding Challenge 3</h1>
       </header>
       <section className="app-body">
         <article className="form">
@@ -30,9 +30,8 @@ function App() {
           />
         </article>
       </section>
-    </article>
+    </div>
   );
 }
-
 
 export default App;

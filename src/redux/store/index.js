@@ -36,6 +36,12 @@ let initialTableState = {
       dataIndex: 'hobby',
       key: 'hobby',
     },
+
+    {
+      title: 'User Id',
+      dataIndex: 'User Id',
+      key: 'User Id',
+    },
   ],
 };
 
